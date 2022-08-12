@@ -41,7 +41,7 @@ public class PubSubStreaming {
         @ProcessElement
         public void processing(ProcessContext processContext){
 
-            TableRow tableRow = new TableRow().set("id",processContext.toString())
+            TableRow tableRow = new TableRow().set("id",Integer.valueOf(processContext.element().toString()))
                     .set("name",processContext.toString())
                     .set("surname",processContext.toString());
 
